@@ -2,15 +2,6 @@
 
 A RESTful API for managing a shop's warehouse inventory, built with Spring Boot 3.x and Java 17.
 
-## 📋 Features
-
-- **Item Management**: Complete CRUD operations for items
-- **Variant Support**: Each item can have multiple variants (sizes, colors, etc.)
-- **Stock Control**: Track inventory levels and prevent overselling
-- **Price Management**: Individual pricing for items and variants
-- **Search & Filter**: Find items by name or availability
-- **Stock Operations**: Increase and reduce stock with validation
-
 ## 🛠️ Technologies Used
 
 - Java 17
@@ -317,36 +308,6 @@ curl -X PATCH http://localhost:8080/api/variants/1/reduce-stock \
 - **Price**: Required, must be zero or positive
 - **Stock**: Required, must be zero or positive
 - **Stock Reduction**: Cannot reduce more than available stock
-
-## 🎯 Assumptions
-
-1. **Stock Management**: Both items and variants track their own stock independently
-2. **Pricing Flexibility**: Variants can have different prices from their parent items
-3. **No Authentication**: This is a backend-only assessment without authentication
-4. **Single Currency**: All prices are in the same currency (e.g., IDR)
-5. **No Order System**: Direct stock manipulation instead of order processing
-6. **Cascade Delete**: Deleting an item removes all its variants
-
-## 📝 Design Choices Explained
-
-### Why Both Item and Variant Have Stock?
-- **Flexibility**: Some shops sell base items without variants
-- **Independent Tracking**: Variants can have different stock levels
-- **Real-world Mapping**: Matches common e-commerce patterns
-
-### Why BigDecimal for Price?
-- **Precision**: Accurate decimal calculations for money
-- **No Rounding Errors**: Critical for financial calculations
-
-### Why Validation Annotations?
-- **Declarative**: Clear constraints at the model level
-- **Automatic**: Spring Boot validates before processing
-- **Maintainable**: Easy to update validation rules
-
-### Why Separate Controllers?
-- **Separation of Concerns**: Clear responsibility boundaries
-- **Scalability**: Easy to add features per entity
-- **RESTful Design**: Resource-based URL structure
 
 ## 🐛 Error Handling
 
