@@ -400,24 +400,3 @@ warehouse-management/
 ├── pom.xml
 └── README.md
 ```
-
-## 🎨 Code Style Reference
-
-This project follows the code style from [Alhuzsyam/Springboot_restAPI](https://github.com/Alhuzsyam/Springboot_restAPI):
-- Simple and clean controller structure
-- Direct service injection with @Autowired
-- Standard repository pattern
-- Basic entity relationships
-- Straightforward error handling
-
-## 📄 License
-
-This project is created for GELI Technical Assessment.
-
-## 👤 Author
-
-Your Name - Backend Developer Assessment
-
----
-
-**Note**: This is a technical assessment project. The focus is on demonstrating backend development skills, clean code, and RESTful API design principles.
